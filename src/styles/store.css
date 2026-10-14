@@ -1,0 +1,33 @@
+.crumbs{font-size:.9rem;color:var(--slate);margin-bottom:24px} .crumbs a{text-decoration:none;color:var(--brand-deep);font-weight:600}
+.paths{margin-top:-56px;position:relative;z-index:4}
+.path{display:flex;flex-direction:column;gap:6px;background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:26px;text-decoration:none;box-shadow:var(--shadow-lg);transition:transform .25s,border-color .25s}
+.path:hover{transform:translateY(-4px);border-color:#bcd3f7} .path h3{margin:6px 0 0} .path p{color:var(--slate);flex:1;margin:0 0 8px;font-size:.97rem}
+.path__icon{display:grid;place-items:center;width:46px;height:46px;border-radius:14px;background:var(--brand-soft);color:var(--brand-deep)}
+.path:nth-child(2) .path__icon{background:var(--accent-soft);color:var(--accent-ink)} .path:nth-child(3) .path__icon{background:var(--leaf-soft);color:#0B6B49}
+.shop{display:grid;gap:32px;grid-template-columns:240px 1fr;align-items:start}
+.filters{display:grid;gap:18px;position:sticky;top:92px} .fgroup{border:0;padding:0;margin:0} .fgroup legend{font:600 .95rem var(--font-display);margin-bottom:8px;padding:0}
+.fgroup label{display:flex;gap:8px;align-items:center;padding:4px 0;font-size:.95rem;color:var(--slate);cursor:pointer} .fgroup input{accent-color:var(--brand)}
+.toolbar{display:flex;gap:12px;flex-wrap:wrap} .toolbar input,.toolbar select{height:48px;border:1px solid var(--line);border-radius:var(--r-md);padding:0 16px;font:inherit;background:#fff;color:var(--ink)}
+.toolbar input{flex:1;min-width:200px} .filters__btn{display:none;height:48px}
+.count{color:var(--slate);margin:16px 0 20px;font-size:.95rem}
+.empty{text-align:center;padding:56px 20px;border:1px dashed var(--line);border-radius:var(--r-lg);background:var(--wash)} .empty p{margin:0 auto 16px}
+@media (max-width:899px){.shop{grid-template-columns:1fr} .filters{display:none;position:static;padding:18px;border:1px solid var(--line);border-radius:var(--r-lg);background:#fff;margin-bottom:8px}
+  .filters.open{display:grid} .filters__btn{display:inline-flex} .shop>.filters{order:2} .shop>div{order:1}}
+.detail{display:grid;gap:clamp(24px,4vw,56px);grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));align-items:start}
+.detail .imgslot{margin:0;width:100%;border-radius:var(--r-lg);font-size:1.3rem}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 12px}
+.note{color:var(--slate);font-size:.88rem;margin-top:12px}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r-lg);background:#fff}
+.spec-table,.ctable{width:100%;border-collapse:collapse;font-size:.97rem}
+.spec-table th,.spec-table td,.ctable th,.ctable td{padding:14px 18px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+.spec-table tr:last-child>*,.ctable tbody tr:last-child>*{border-bottom:0} .spec-table th{width:38%;font-weight:600;color:var(--ink-2);background:var(--wash)}
+.ctable{min-width:640px} .ctable thead th{font:600 1rem var(--font-display);vertical-align:bottom;background:var(--wash)} .ctable thead a{text-decoration:none;display:block}
+.ctable small{display:block;font:400 .82rem var(--font-body);color:var(--slate)} .ctable tbody th{width:200px;color:var(--ink-2);font-weight:600;position:sticky;left:0;background:#fff}
+.ctable tfoot td{border-bottom:0;border-top:1px solid var(--line)}
+.linkbtn{background:none;border:0;padding:0;color:var(--brand-deep);font:600 .85rem var(--font-body);cursor:pointer;text-decoration:underline}
+.cmp{align-self:flex-start;background:none;border:1px solid var(--line);border-radius:999px;padding:6px 14px;font:600 .85rem var(--font-body);color:var(--slate);cursor:pointer;transition:all .2s}
+.cmp:hover:not(:disabled){border-color:var(--brand);color:var(--brand-deep)} .cmp--on{background:var(--brand-soft);border-color:var(--brand);color:var(--brand-deep)} .cmp:disabled{opacity:.5;cursor:not-allowed}
+.cmpbar{position:fixed;left:0;right:0;bottom:0;z-index:60;background:#fff;border-top:1px solid var(--line);box-shadow:0 -12px 30px -18px rgba(15,42,74,.35);padding:12px 0;animation:rise .35s ease both}
+.cmpbar__in{display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap} .cmpbar p{margin:0;font-size:.95rem}
+.cmpbar__act{display:flex;gap:10px;align-items:center} .cmpbar__hint{color:var(--slate);font-size:.9rem}
+.btn[disabled]{opacity:.55;cursor:not-allowed;transform:none}
