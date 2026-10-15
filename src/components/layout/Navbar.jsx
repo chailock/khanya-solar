@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { useCart } from '../../features/cart/CartContext';
 import Logo from '../common/Logo';
 import Button from '../common/Button';
-const links = [['Shop', '/products'], ['Design my system', '/design-my-system'], ['Commercial projects', '/commercial-projects'], ['About', '/about'], ['Contact', '/contact']];
+const links = [['Home', '/'], ['Shop', '/products'], ['Design my system', '/design-my-system'], ['Commercial projects', '/commercial-projects'], ['About', '/about'], ['Contact', '/contact']];
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const { count } = useCart();
@@ -14,7 +14,7 @@ export default function Navbar() {
         <nav aria-label="Main">
           <ul className={`nav__links${open ? ' open' : ''}`}>
             {links.map(([label, to]) => (
-              <li key={to}><NavLink to={to} onClick={() => setOpen(false)}>{label}</NavLink></li>
+              <li key={to}><NavLink to={to} end={to === '/'} onClick={() => setOpen(false)}>{label}</NavLink></li>
             ))}
           </ul>
         </nav>

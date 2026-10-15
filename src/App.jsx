@@ -13,11 +13,13 @@ import QuoteConfirmationPage from './pages/store/QuoteConfirmationPage';
 import BulkEnquiryPage from './pages/store/BulkEnquiryPage';
 import DesignMySystemPage from './pages/store/DesignMySystemPage';
 import SystemSummaryPage from './pages/store/SystemSummaryPage';
+import AboutPage from './pages/store/AboutPage';
+import ContactPage from './pages/store/ContactPage';
 import CommercialProjectsPage from './pages/projects/CommercialProjectsPage';
 import ProjectTypePage from './pages/projects/ProjectTypePage';
 import ProjectEnquiryPage from './pages/projects/ProjectEnquiryPage';
 import ProjectConfirmationPage from './pages/projects/ProjectConfirmationPage';
-const pages = [['about', 'About'], ['contact', 'Contact'], ['terms', 'Terms'], ['privacy', 'Privacy']];
+const pages = [['terms', 'Terms'], ['privacy', 'Privacy']];
 export default function App() {
   return (
     <Routes>
@@ -32,6 +34,8 @@ export default function App() {
         <Route path="request-quote" element={<RequestQuotePage />} />
         <Route path="quote-confirmation/:ref" element={<QuoteConfirmationPage />} />
         <Route path="bulk-enquiry" element={<BulkEnquiryPage />} />
+        <Route path="about" element={<AboutPage />} />
+        <Route path="contact" element={<ContactPage />} />
         <Route path="design-my-system" element={<DesignMySystemPage />} />
         <Route path="system-summary/:ref" element={<SystemSummaryPage />} />
         <Route path="commercial-projects" element={<CommercialProjectsPage />} />

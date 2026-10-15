@@ -1,7 +1,7 @@
 :root{
   --ink:#0F2A4A; --ink-2:#1B3D66; --brand:#0B6FE8; --brand-deep:#0A56BD; --brand-soft:#E6F0FF;
   --accent:#FF8A00; --accent-ink:#B85500; --accent-soft:#FFF0DB; --leaf:#12A06B; --leaf-soft:#E0F6EC;
-  --paper:#fff; --wash:#F5F9FF; --slate:#4B5F78; --line:#E0E9F5;
+  --paper:#fff; --wash:#EEF5FF; --slate:#4B5F78; --line:#E0E9F5;
   --font-display:'Poppins',system-ui,sans-serif; --font-body:'Source Sans 3',system-ui,sans-serif;
   --r-sm:10px; --r-md:14px; --r-lg:22px;
   --shadow-sm:0 1px 2px rgba(15,42,74,.06),0 8px 24px -12px rgba(15,42,74,.18);
