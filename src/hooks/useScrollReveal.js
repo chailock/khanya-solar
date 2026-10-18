@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 // Cards and headings ease in once as they scroll into view, then the effect is removed so hover styles work normally.
-const SELECTOR = '.pcard,.proj,.enq__card,.steps li,.stat,.section__head,.cta';
+const SELECTOR = '.pcard,.proj,.svc,.enq__card,.steps li,.stat,.section__head,.cta';
 export default function useScrollReveal() {
   const { pathname } = useLocation();
   useEffect(() => {

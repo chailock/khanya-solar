@@ -17,3 +17,16 @@
 .crow{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start;background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:18px 20px;box-shadow:var(--shadow-sm)}
 .crow h3{margin:0 0 2px;font-size:1rem} .crow p{margin:0;color:var(--slate);font-size:.97rem;overflow-wrap:anywhere} .crow a{color:var(--brand-deep);font-weight:600;text-decoration:none} .crow a:hover{text-decoration:underline}
 .crow:nth-child(2) .path__icon{background:var(--accent-soft);color:var(--accent-ink)} .crow:nth-child(3) .path__icon,.crow:nth-child(5) .path__icon{background:var(--leaf-soft);color:#0B6B49} .crow:nth-child(4) .path__icon{background:var(--accent-soft);color:var(--accent-ink)}
+.qhero{position:relative;overflow:hidden;background:linear-gradient(120deg,#D3E7FF 0%,#EAF4FF 50%,#FFF0D2 100%);padding:clamp(36px,6vw,80px) 0 clamp(48px,7vw,96px)}
+.qhero::after{content:"";position:absolute;right:-80px;top:-100px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(255,176,32,.45),rgba(255,176,32,0) 68%);pointer-events:none}
+.qgrid{position:relative;z-index:1;display:grid;gap:clamp(28px,5vw,64px);grid-template-columns:1fr 1.08fr;align-items:start} @media (max-width:959px){.qgrid{grid-template-columns:1fr}}
+.qintro h1{font-size:clamp(2.2rem,4.6vw,3.4rem);margin-bottom:.35em} .qintro h1 span{color:var(--brand)}
+.qlist{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:14px} .qlist li{display:flex;gap:12px;align-items:flex-start;font-weight:600;color:var(--ink-2)}
+.qlist li::before{content:"✓";flex:none;display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--leaf);color:#fff;font-size:.85rem;margin-top:1px}
+.qcard{background:#fff;border:1px solid var(--line);border-top:5px solid var(--accent);border-radius:var(--r-lg);padding:clamp(22px,4vw,36px);box-shadow:var(--shadow-lg)}
+.qcard h2{margin:0;font-size:1.6rem} .qcard__sub{margin:4px 0 20px;color:var(--slate)}
+.qform{display:grid;gap:16px} .qform .field input:not([type=checkbox]),.qform .field select,.qform .field textarea{background:var(--wash)}
+.qform .field label{font-size:.9rem} .hp{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+.btn--block{width:100%;min-height:54px;font-size:1.02rem}
+.qprivacy{margin:0;text-align:center;color:var(--slate);font-size:.88rem;max-width:none}
+.qprod{border:1px solid var(--line);border-radius:var(--r-md);padding:12px 16px;background:#fff} .qprod summary{cursor:pointer;font-weight:600;font-size:.93rem} .qprod summary span{font-weight:400;color:var(--slate)} .qprod .picker{margin-top:12px}

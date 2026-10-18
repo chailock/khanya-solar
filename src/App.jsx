@@ -15,6 +15,15 @@ import DesignMySystemPage from './pages/store/DesignMySystemPage';
 import SystemSummaryPage from './pages/store/SystemSummaryPage';
 import AboutPage from './pages/store/AboutPage';
 import ContactPage from './pages/store/ContactPage';
+import LoginPage from './pages/admin/LoginPage';
+import DashboardPage from './pages/admin/DashboardPage';
+import ProductsAdminPage from './pages/admin/ProductsAdminPage';
+import ProductEditPage from './pages/admin/ProductEditPage';
+import RecordsPage from './pages/admin/RecordsPage';
+import RecordDetailPage from './pages/admin/RecordDetailPage';
+import ReportsPage from './pages/admin/ReportsPage';
+import SettingsPage from './pages/admin/SettingsPage';
+import AdminLayout from './layouts/AdminLayout';
 import CommercialProjectsPage from './pages/projects/CommercialProjectsPage';
 import ProjectTypePage from './pages/projects/ProjectTypePage';
 import ProjectEnquiryPage from './pages/projects/ProjectEnquiryPage';
@@ -23,6 +32,17 @@ const pages = [['terms', 'Terms'], ['privacy', 'Privacy']];
 export default function App() {
   return (
     <Routes>
+      <Route path="admin/login" element={<LoginPage />} />
+      <Route path="admin" element={<AdminLayout />}>
+        <Route index element={<DashboardPage />} />
+        <Route path="products" element={<ProductsAdminPage />} />
+        <Route path="products/new" element={<ProductEditPage />} />
+        <Route path="products/edit/:slug" element={<ProductEditPage />} />
+        <Route path="reports" element={<ReportsPage />} />
+        <Route path="settings" element={<SettingsPage />} />
+        <Route path=":section" element={<RecordsPage />} />
+        <Route path=":section/:ref" element={<RecordDetailPage />} />
+      </Route>
       <Route element={<StoreLayout />}>
         <Route index element={<Home />} />
         <Route path="products" element={<ProductsPage />} />

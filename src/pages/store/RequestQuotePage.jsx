@@ -1,5 +1,20 @@
-import QuoteForm from '../../components/forms/QuoteForm';
+import QuoteRequestForm from '../../components/forms/QuoteRequestForm';
+import { QUOTE_POINTS } from '../../features/quote/quoteOptions';
+import { siteConfig } from '../../data/siteConfig';
 export default function RequestQuotePage() {
-  return (<><div className="page-head"><div className="container"><h1>Request a quotation</h1><p>Choose your equipment and tell us where it is going. You will receive a reference number straight away.</p></div></div>
-    <section className="section" style={{ paddingTop: 40 }}><div className="container narrow"><QuoteForm mode="quote" /></div></section></>);
+  return (
+    <section className="qhero"><div className="container qgrid">
+      <div className="qintro">
+        <span className="eyebrow">Instant Estimate</span>
+        <h1>Get Your Free <span>Solar Quote</span></h1>
+        <p className="lead">Fill in the form for an instant estimate, or complete all details for a detailed follow-up proposal. All quotes are free with no obligation.</p>
+        <ul className="qlist">{QUOTE_POINTS.map((p) => <li key={p}>{p}</li>)}</ul>
+      </div>
+      <div className="qcard">
+        <h2>Request a Quote</h2>
+        <p className="qcard__sub">We'll respond {siteConfig.contact.response}</p>
+        <QuoteRequestForm />
+      </div>
+    </div></section>
+  );
 }
