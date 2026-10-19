@@ -8,8 +8,8 @@ export default function ProductsSection() {
     <section className="section" id="products"><div className="container">
       <div className="section__head"><h2>Hanchu solar and storage equipment</h2>
         <p className="lead">Inverters, batteries and storage systems with manufacturer specifications. Prices and stock are confirmed when you request a quote.</p></div>
-      <div className="chips" aria-label="Categories">{categories.map((c) => <Link key={c.slug} to={`/products?category=${c.slug}`}>{c.name}</Link>)}</div>
-      <p className="lead" style={{ fontSize: "1rem", marginBottom: 24 }}>PV modules are coming soon. They will be listed once Hanchu confirms the range and specifications.</p>
+      <div className="chips" aria-label="Categories">{categories.map((c) => (
+        <Link key={c.slug} to={`/products?category=${c.slug}`}>{c.name}{!demoProducts.some((p) => p.category === c.slug) && <em className="soontag">Coming soon</em>}</Link>))}</div>
       <div className="grid">{demoProducts.slice(0, 3).map((p) => <ProductCard key={p.slug} p={p} />)}</div>
       <p style={{ marginTop: 28 }}><Button to="/products" variant="line">View all products</Button></p>
     </div></section>

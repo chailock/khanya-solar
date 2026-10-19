@@ -1,0 +1,14 @@
+/* One card system: same surface, radius, shadow and hover across the site. Loaded last so it wins. */
+.pcard,.svc,.proj,.why,.steps li,.flow__step,.crow,.contact,.partner,.panel{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--shadow-sm)}
+.partner{border-top:5px solid var(--brand)} .partner--sfsc{border-top-color:var(--leaf)}
+.pcard,.svc,.proj{transition:transform .25s,box-shadow .25s,border-color .25s}
+.pcard:hover,.svc:hover,.proj:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:#bcd3f7}
+.why{padding:24px} .why h3{margin-bottom:.4em}
+.pcard .imgslot,.svc .imgslot,.proj .imgslot{margin:0;width:100%;border-radius:0}
+.imgslot--contain{padding:12px;background:linear-gradient(180deg,#fff 0%,var(--wash) 100%)}
+.detail .imgslot--contain{border:1px solid var(--line);border-radius:var(--r-lg)}
+.pcard h3,.svc h3,.why h3,.flow__step h3,.steps li h3,.ep h3{font-size:1.08rem;line-height:1.25}
+.svc__cta,.path__go{font:600 .9rem var(--font-display);color:var(--brand-deep)}
+.price--ask{font-weight:500;font-size:.92rem;color:var(--slate)}
+.chips a .soontag{margin-left:8px;padding:1px 8px;border-radius:999px;background:var(--accent-soft);color:var(--accent-ink);font:600 .7rem var(--font-body);font-style:normal}
+.photohint{color:var(--slate);font-size:.78rem}

@@ -15,7 +15,7 @@ export default function ProductCard({ p }) {
         <span className="pcard__mfr">{p.manufacturer} · {p.model}</span>
         <h3><Link to={`/products/${p.slug}`} style={{ textDecoration: 'none' }}>{p.name}</Link></h3>
         <ul className="specs">{p.specs.map((s) => <li key={s}>{s}</li>)}</ul>
-        <div className="pcard__foot"><span className="price">{formatCurrency(p.price)}</span><AvailabilityBadge status={p.availability} /></div>
+        <div className="pcard__foot"><span className={`price${p.price == null ? ' price--ask' : ''}`}>{formatCurrency(p.price)}</span><AvailabilityBadge status={p.availability} /></div>
         <div className="pcard__actions">
           <button type="button" className="btn btn--dark btn--sm" onClick={() => add(p.slug)}>Add to cart</button>
           <Button to={`/request-quote?product=${p.slug}`} variant="line" className="btn--sm">Request a quote</Button>
