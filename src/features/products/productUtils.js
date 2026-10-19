@@ -1,4 +1,7 @@
 import { demoProducts } from '../../data/demoProducts';
+import { autoProductImage } from '../../utils/productImages';
+// The photo to show for a product: one set in admin, otherwise a file in public/images/products/ matched by name.
+export const productImage = (p) => p.image || autoProductImage(p);
 export const getProduct = (slug) => demoProducts.find((p) => p.slug === slug);
 export function filterProducts(list, { q = '', category = '', application = '', phase = '', availability = '' }) {
   const t = q.trim().toLowerCase();

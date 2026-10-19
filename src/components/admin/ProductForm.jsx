@@ -58,7 +58,7 @@ export default function ProductForm({ product }) {
         <FormField id="specs" label="Key specifications" hint="One per line. Shown on product cards."><textarea rows="3" {...bind('specs')} /></FormField>
         <FormField id="table" label="Specification table" hint="One per line as Label: value."><textarea rows="6" {...bind('table')} /></FormField>
         <FormField id="highlights" label="Highlights" optional hint="One per line."><textarea rows="3" {...bind('highlights')} /></FormField>
-        <ImageUpload value={f.image} onChange={(v) => setF({ ...f, image: v })} error={errors.image} />
+        <ImageUpload value={f.image} onChange={(v) => setF({ ...f, image: v })} error={errors.image} slug={product?.slug || slugify(f.model) || 'product'} />
         {text('datasheet', 'Datasheet path or link', { optional: true })}
         <p className="note" style={{ margin: 0 }}>Datasheets go in the project's <code>public/documents/datasheets</code> folder, for example <code>/documents/datasheets/6k.pdf</code>.</p>
       </fieldset>

@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { uploadImage } from '../../services/imageService';
-export default function ImageUpload({ value, onChange, error }) {
+export default function ImageUpload({ value, onChange, error, slug = 'product' }) {
   const [drag, setDrag] = useState(false);
   const [busy, setBusy] = useState(false);
   const [msg, setMsg] = useState('');
   const isData = value.startsWith('data:');
+  const ext = value.startsWith('data:image/webp') ? 'webp' : value.startsWith('data:image/png') ? 'png' : 'jpg';
   const take = async (file) => {
     if (!file) return;
     setBusy(true); setMsg('');
@@ -21,6 +22,7 @@ export default function ImageUpload({ value, onChange, error }) {
         <span className="drop__text">{busy ? 'Processing…' : value ? 'Drop a new image or click to replace' : 'Drag and drop an image here, or click to choose'}<small>JPG, PNG or WebP. It is resized automatically.</small></span>
       </label>
       {value && <button type="button" className="linkbtn" onClick={() => { onChange(''); setMsg(''); }}>Remove image</button>}
+      <p className="note" style={{ margin: 0 }}>Uploaded images are saved in this browser only, so other devices such as phones will not see them. To show it everywhere{isData ? <>, <a href={value} download={`${slug}.${ext}`}>download this image</a> and</> : ','} save the file as <code>public/images/products/{slug}.{isData ? ext : 'jpg'}</code> in the project.</p>
       {!isData && (<div className="field"><label htmlFor="imageLink">Or use an image link or path <span>(optional)</span></label><input id="imageLink" value={value} onChange={(e) => onChange(e.target.value)} placeholder="https://… or /images/products/photo.jpg" /></div>)}
       {(msg || error) && <small className="err" role="alert">{msg || error}</small>}
     </div>

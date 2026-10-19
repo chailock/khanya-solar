@@ -4,12 +4,13 @@ import ImageSlot from '../common/ImageSlot';
 import Button from '../common/Button';
 import CompareToggle from './CompareToggle';
 import { useCart } from '../../features/cart/CartContext';
+import { productImage } from '../../features/products/productUtils';
 import { formatCurrency } from '../../utils/formatCurrency';
 export default function ProductCard({ p }) {
   const { add } = useCart();
   return (
     <article className="pcard">
-      <ImageSlot src={p.image} alt={`${p.manufacturer} ${p.model}`} label={p.model} ratio="16 / 9" fit="contain" />
+      <ImageSlot src={productImage(p)} alt={`${p.manufacturer} ${p.model}`} label={p.model} ratio="16 / 9" fit="contain" />
       <div className="pcard__body">
         <span className="pcard__mfr">{p.manufacturer} · {p.model}</span>
         <h3><Link to={`/products/${p.slug}`} style={{ textDecoration: 'none' }}>{p.name}</Link></h3>

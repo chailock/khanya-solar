@@ -8,7 +8,7 @@ import SpecificationTable from '../../components/products/SpecificationTable';
 import ProductCard from '../../components/products/ProductCard';
 import { demoProducts, applications, phases } from '../../data/demoProducts';
 import { categories } from '../../data/categories';
-import { getProduct } from '../../features/products/productUtils';
+import { getProduct, productImage } from '../../features/products/productUtils';
 import { useCart } from '../../features/cart/CartContext';
 import { formatCurrency } from '../../utils/formatCurrency';
 export default function ProductDetailPage() {
@@ -22,7 +22,7 @@ export default function ProductDetailPage() {
     <section className="section" style={{ paddingTop: 32 }}><div className="container">
       <Breadcrumbs items={[['Shop', '/products'], [cat.name, `/products?category=${p.category}`], [p.model]]} />
       <div className="detail">
-        <ImageSlot src={p.image} alt={`${p.manufacturer} ${p.model}`} label={p.model} ratio="4 / 3" fit="contain" />
+        <ImageSlot src={productImage(p)} alt={`${p.manufacturer} ${p.model}`} label={p.model} ratio="4 / 3" fit="contain" />
         <div>
           <span className="pcard__mfr">{p.manufacturer} · {p.model}</span>
           <h1 style={{ fontSize: 'clamp(1.8rem,3.6vw,2.6rem)' }}>{p.name}</h1>
