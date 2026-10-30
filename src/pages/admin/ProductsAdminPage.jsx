@@ -21,7 +21,7 @@ export default function ProductsAdminPage() {
   return (
     <>
       <div className="adm__head"><h1>Products</h1><Link to="/admin/products/new" className="btn btn--primary btn--sm">Add product</Link></div>
-      <p className="note">Prices are demonstration values until Hanchu confirms pricing, VAT and stock. Changes appear on the storefront straight away.</p>
+      <p className="note">Prices are in rand, as supplied by Hanchu Energy SA (July 2026 price list). Changes appear on the storefront straight away.</p>
       {unmatchedPhotos(demoProducts).length > 0 && <p className="testnote" role="note">These photos in <code>public/images/products</code> do not match a product name: {unmatchedPhotos(demoProducts).map((f) => f.split('/').pop()).join(', ')}. Rename each to a product slug such as <code>{demoProducts[0]?.slug}.jpg</code>.</p>}
       <DataTable columns={cols} rows={[...demoProducts]} empty="No products. Add one to get started." />
     </>

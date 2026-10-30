@@ -39,7 +39,7 @@ export default function CheckoutPage() {
   };
   return (
     <>
-      <div className="page-head"><div className="container"><h1>Test checkout</h1><p>Enter synthetic details to see the full order journey.</p></div></div>
+      <div className="page-head"><div className="container"><h1>Checkout</h1><p>Tell us where to deliver and how to reach you. We confirm stock, delivery and payment with you.</p></div></div>
       <section className="section" style={{ paddingTop: 40 }}><div className="container cartgrid">
         <form className="form" onSubmit={submit} noValidate>
           <TestCheckoutNotice />
@@ -62,13 +62,13 @@ export default function CheckoutPage() {
             </div>
             <FormField id="notes" label="Delivery notes" optional><textarea rows="3" {...f.bind('notes')} /></FormField>
           </fieldset>
-          <fieldset><legend>Payment</legend><p className="note" style={{ marginTop: 0 }}>Payment is not collected in this demo. No card details are requested or stored.</p></fieldset>
+          <fieldset><legend>Payment</legend><p className="note" style={{ marginTop: 0 }}>Payment is not collected on this site, and no card details are requested or stored.</p></fieldset>
           <div className={`field${f.errors.consent ? ' field--err' : ''}`}>
             <label className="check"><input type="checkbox" {...f.bind('consent')} checked={f.values.consent} /> <span>I agree to {siteConfig.brand.name} contacting me about this order. See the <Link to="/privacy">privacy notice</Link>.</span></label>
             {f.errors.consent && <small className="err" role="alert">{f.errors.consent}</small>}
           </div>
           {fail && <p className="err" role="alert">{fail}</p>}
-          <button className="btn btn--primary" type="submit" disabled={busy}>{busy ? 'Placing test order…' : 'Place test order'}</button>
+          <button className="btn btn--primary" type="submit" disabled={busy}>{busy ? 'Placing order…' : 'Place order'}</button>
         </form>
         <CartSummary totals={t}><ul className="mini">{ls.map((l) => <li key={l.product.slug}>{l.qty} × {l.product.model}</li>)}</ul><Button to="/cart" variant="line">Edit cart</Button></CartSummary>
       </div></section>

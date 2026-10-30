@@ -10,9 +10,9 @@ export const siteConfig = {
     location: 'Volksrust, KwaZulu-Natal, South Africa', serviceAreas: 'KZN · Mpumalanga · Free State · Gauteng border',
     hours: ['Mon – Fri: 07:00 – 17:00', 'Sat: 08:00 – 13:00'], response: 'within 1 business day',
   },
-  supplier: { name: 'Hanchu Energy', note: 'Proposed supply and fulfilment partner' },
+  supplier: { name: 'Hanchu Energy SA', note: 'Proposed supply and fulfilment partner', address: '142 Lechwe St, Randjespark, Midrand, 1685', website: 'www.hanchuess.co.za' },
   engineering: { name: 'Solar Farming Systems Capital (SFSC)', short: 'SFSC', note: 'Engineering, EPC and project development' },
   // Home hero photo. Both folder spellings are tried, so public/images/banners/solar.jpg or public/images/banner/solar.jpg works.
   heroImages: ['/images/banners/solar.jpg', '/images/banner/solar.jpg'],
-  demoNotice: 'Demonstration site. Prices, stock and the partnership are provisional until formally agreed.',
+  priceNotice: 'Prices in rand, as supplied by Hanchu Energy SA (July 2026 price list). Stock, delivery and VAT are confirmed when you order.',
 };

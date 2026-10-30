@@ -14,13 +14,13 @@ export default function OrderConfirmationPage() {
     <section className="section"><div className="container confirm">
       <TestCheckoutNotice />
       <h1>Thank you, {o.customer.name.split(' ')[0]}</h1>
-      <p className="lead">Your test order has been recorded. An administrator can now review it.</p>
+      <p className="lead">Your order has been received. Our team will contact you to confirm it.</p>
       <div className="ref"><span>Order reference</span><strong>{o.ref}</strong></div>
-      <dl className="dl"><dt>Status</dt><dd>Received (demo)</dd><dt>Placed</dt><dd>{new Date(o.createdAt).toLocaleString('en-ZA')}</dd>
+      <dl className="dl"><dt>Status</dt><dd>Received</dd><dt>Placed</dt><dd>{new Date(o.createdAt).toLocaleString('en-ZA')}</dd>
         <dt>Subtotal</dt><dd>{subtotalLabel(o.totals)}</dd><dt>Delivery</dt><dd>Quoted separately</dd>
         <dt>Deliver to</dt><dd>{o.delivery.street}, {o.delivery.suburb}, {o.delivery.city}, {o.delivery.province} {o.delivery.postal}</dd></dl>
       <h3>Items</h3><ul className="mini">{o.items.map((i) => <li key={i.slug}>{i.qty} × {i.name} ({i.model})</li>)}</ul>
-      <p className="note">No payment was taken. Pricing, VAT, stock and delivery would be confirmed before a real order proceeds.</p>
+      <p className="note">No payment was taken. Pricing, VAT, stock and delivery are confirmed with you before your order goes ahead.</p>
       <p><Button to="/products">Continue shopping</Button></p>
     </div></section>
   );

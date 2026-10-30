@@ -9,10 +9,10 @@ const loc = (l) => (l ? [l.place, l.province].filter(Boolean).join(', ') || '—
 const TOPICS = { general: 'General enquiry', products: 'Products and quotations', system: 'Solar system design', project: 'Commercial or EPC project', support: 'Support or maintenance' };
 // Route sections -> stored collections. statuses[0] is the "new / needs attention" state.
 export const SECTIONS = {
-  orders: { db: 'orders', title: 'Orders', statuses: ['received', 'processing', 'completed', 'cancelled'], who: (r) => r.customer.name, summary: (r) => `${qty(r)} item(s), test order`,
+  orders: { db: 'orders', title: 'Orders', statuses: ['received', 'processing', 'completed', 'cancelled'], who: (r) => r.customer.name, summary: (r) => `${qty(r)} item(s)`,
     fields: [['Customer', (r) => r.customer.name], ['Email', (r) => r.customer.email], ['Phone', (r) => r.customer.phone],
       ['Delivery address', (r) => `${r.delivery.street}, ${r.delivery.suburb}, ${r.delivery.city}, ${r.delivery.province} ${r.delivery.postal}`], ['Delivery notes', (r) => r.delivery.notes || '—'],
-      ['Items', items], ['Subtotal', (r) => subtotalLabel(r.totals)], ['Delivery cost', () => 'Quoted separately'], ['Payment', () => 'Test checkout, no payment taken']] },
+      ['Items', items], ['Subtotal', (r) => subtotalLabel(r.totals)], ['Delivery cost', () => 'Quoted separately'], ['Payment', () => 'No payment taken online']] },
   quotes: { db: 'quotes', title: 'Quotations', statuses: ['new', 'in_review', 'quoted', 'closed'], who: (r) => r.contact.name, summary: (r) => `${r.type === 'bulk' ? 'Bulk' : 'Quote'}: ${r.items?.length ? items(r).split('\n')[0] : 'no products selected'}`,
     fields: [['Type', (r) => (r.type === 'bulk' ? 'Bulk or reseller enquiry' : 'Quotation request')], ['Customer type', (r) => (r.propertyType ? optLabel(PROPERTY_TYPES, r.propertyType) : CUSTOMER_TYPES[r.customerType] || r.customerType)], ['Name', (r) => r.contact.name],
       ['Monthly bill (R)', (r) => r.monthlyBill || '—'], ['Roof type', (r) => (r.roofType ? optLabel(ROOF_TYPES, r.roofType) : '—')], ['Installation address', (r) => r.location?.address || '—'],

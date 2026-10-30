@@ -35,13 +35,13 @@ export default function ProductDetailPage() {
             {p.datasheet ? <a className="btn btn--line" href={p.datasheet} download>Download datasheet</a> : <button type="button" className="btn btn--line" disabled>Datasheet coming soon</button>}
           </div>
           <p style={{ marginTop: 14 }}><CompareToggle slug={p.slug} /></p>
-          <p className="note">Prices are demonstration values. VAT and delivery terms will be shown once the commercial policy is confirmed.</p>
+          <p className="note">Price in South African rand, as supplied by Hanchu Energy SA (July 2026 price list). VAT, delivery and stock are confirmed when you order or request a quote.</p>
         </div>
       </div>
       {p.highlights.length > 0 && (<><h2 style={{ marginTop: 56 }}>Highlights</h2><ul className="specs" style={{ fontSize: '1.02rem' }}>{p.highlights.map((h) => <li key={h}>{h}</li>)}</ul></>)}
       <h2 style={{ marginTop: 48 }}>Specifications</h2>
       <SpecificationTable rows={p.table} />
-      <p className="note">Source: Hanchu ESS brochure 2026. Confirm against the current manufacturer datasheet before ordering.</p>
+      <p className="note">Source: Hanchu Energy SA price list (July 2026) and the Hanchu ESS brochure (2026). Confirm against the current manufacturer datasheet before ordering.</p>
       <h2 style={{ marginTop: 56 }}>You may also like</h2>
       <div className="grid">{related.map((r) => <ProductCard key={r.slug} p={r} />)}</div>
     </div></section>

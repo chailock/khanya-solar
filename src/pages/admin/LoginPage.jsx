@@ -21,7 +21,7 @@ export default function LoginPage() {
   };
   return (
     <div className="authwrap"><form className="authcard" onSubmit={submit} noValidate>
-      <LogoMark size={48} /><h1>Admin sign in</h1><p className="note" style={{ margin: 0 }}>{siteConfig.brand.name} administration. Demo login only: real authentication arrives with the backend.</p>
+      <LogoMark size={48} /><h1>Admin sign in</h1><p className="note" style={{ margin: 0 }}>Sign in to manage {siteConfig.brand.name} products, orders and enquiries.</p>
       <FormField id="email" label="Email"><input id="email" type="email" autoComplete="username" value={email} onChange={(e) => setEmail(e.target.value)} /></FormField>
       <FormField id="password" label="Password"><input id="password" type="password" autoComplete="current-password" value={password} onChange={(e) => setPassword(e.target.value)} /></FormField>
       {error && <p className="err" role="alert">{error}</p>}

@@ -19,7 +19,7 @@ export default function AdminLayout() {
         <nav aria-label="Admin">{nav.map(([to, label, n, end]) => (<NavLink key={to} to={to} end={!!end}>{label}{n > 0 && <b>{n}</b>}</NavLink>))}</nav>
         <div className="adm__foot"><Link to="/">View storefront</Link><button type="button" onClick={logout}>Sign out</button></div>
       </aside>
-      <div className="adm__main"><header className="adm__bar"><span>Signed in as {user.email}</span><span className="sbadge sbadge--amber">Demo data stored in this browser</span></header><main className="adm__content"><Outlet /></main></div>
+      <div className="adm__main"><header className="adm__bar"><span>Signed in as {user.email}</span><span className="sbadge sbadge--amber">Data stored in this browser</span></header><main className="adm__content"><Outlet /></main></div>
     </div>
   );
 }

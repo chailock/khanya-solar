@@ -4,11 +4,11 @@ export function recommend(e) {
   const notes = [];
   const three = e.supply === 'three';
   const wantsBattery = e.battery !== 'no' || e.backup !== 'none';
-  if (e.gridPref === 'offgrid' && e.customerType !== 'commercial') eq.push(['hess-of-e-3-5k1', 'Compact off-grid inverter for smaller sites. Larger loads need engineering.']);
+  if (e.gridPref === 'offgrid' && e.customerType !== 'commercial') eq.push(['hess-of-e-3-5k', 'Compact 24 V off-grid inverter for smaller sites. Larger loads need engineering.']);
   else if (e.customerType === 'commercial' || (e.customerType === 'agricultural' && three)) {
-    eq.push(['cess-hy-25k-50k', 'Three-phase C&I hybrid range, from 25 to 50 kW per unit.']);
-    notes.push('Systems of this size pair the inverter with a high-voltage battery, which is not yet listed in this catalogue.');
-  } else if (three) notes.push('Hanchu also lists three-phase residential hybrid inverters. An engineer will confirm the right model for your supply.');
+    eq.push(['cess-hy-30k', 'Three-phase hybrid inverter, 30 kW. A 50 kW model is also available.']);
+    notes.push('Systems of this size pair the inverter with a high-voltage battery. An engineer will confirm the right battery for your site.');
+  } else if (three) notes.push('Hanchu also lists three-phase hybrid inverters. An engineer will confirm the right model for your supply.');
   else eq.push(['hess-hy-s-6k-s', 'Single-phase hybrid inverter with 6 kW rated output.']);
   if (wantsBattery && eq.some((x) => x[0] === 'hess-hy-s-6k-s')) eq.push(['home-ess-lv-5-12k', '5.12 kWh wall-mount lithium battery. Units can be installed in parallel for more capacity.']);
   const large = e.customerType !== 'residential';

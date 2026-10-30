@@ -31,13 +31,13 @@ export default function ProductForm({ product }) {
     if (Object.keys(er).length) return;
     setBusy(true);
     try {
-    let slug = product?.slug;
-    if (!slug) { const base = slugify(f.model) || 'product'; slug = base; let n = 2; while (demoProducts.some((p) => p.slug === slug)) slug = `${base}-${n++}`; }
-    const rows = lines(f.table).map((l) => { const i = l.indexOf(':'); return i > 0 ? [l.slice(0, i).trim(), l.slice(i + 1).trim()] : [l, '']; });
-    await saveProductRecord({ ...(product || {}), slug, category: f.category, application: f.application, phase: f.phase || null, manufacturer: f.manufacturer.trim() || 'Hanchu', model: f.model.trim(), name: f.name.trim(),
-      price: f.price === '' ? null : Number(f.price), availability: f.availability, datasheet: f.datasheet.trim() || null, image: f.image.trim() || null, specs: lines(f.specs), table: rows, highlights: lines(f.highlights),
-      headline: f.headline || null, voltage: f.voltage || null, efficiency: f.efficiency || null, ip: f.ip || null, dims: f.dims || null, weight: f.weight || null }, product?.slug);
-    nav('/admin/products');
+      let slug = product?.slug;
+      if (!slug) { const base = slugify(f.model) || 'product'; slug = base; let n = 2; while (demoProducts.some((p) => p.slug === slug)) slug = `${base}-${n++}`; }
+      const rows = lines(f.table).map((l) => { const i = l.indexOf(':'); return i > 0 ? [l.slice(0, i).trim(), l.slice(i + 1).trim()] : [l, '']; });
+      await saveProductRecord({ ...(product || {}), slug, category: f.category, application: f.application, phase: f.phase || null, manufacturer: f.manufacturer.trim() || 'Hanchu', model: f.model.trim(), name: f.name.trim(),
+        price: f.price === '' ? null : Number(f.price), availability: f.availability, datasheet: f.datasheet.trim() || null, image: f.image.trim() || null, specs: lines(f.specs), table: rows, highlights: lines(f.highlights),
+        headline: f.headline || null, voltage: f.voltage || null, efficiency: f.efficiency || null, ip: f.ip || null, dims: f.dims || null, weight: f.weight || null }, product?.slug);
+      nav('/admin/products');
     } catch (err) { setErrors({ image: err.message }); setBusy(false); }
   };
   const remove = async () => { if (window.confirm(`Delete ${product.model}? This removes it from the storefront.`)) { await deleteProductRecord(product.slug); nav('/admin/products'); } };
@@ -52,7 +52,7 @@ export default function ProductForm({ product }) {
           <FormField id="phase" label="Supply" optional><select {...bind('phase')}><option value="">Not applicable</option>{Object.entries(phases).map(([v, l]) => <option key={v} value={v}>{l}</option>)}</select></FormField></div>
       </fieldset>
       <fieldset><legend>Price and availability</legend><div className="row2">
-        <FormField id="price" label="Price (R, demonstration value)" optional error={errors.price} hint='Leave empty to show "Price on request".'><input {...bind('price')} type="number" min="0" step="1" /></FormField>
+        <FormField id="price" label="Price (R)" optional error={errors.price} hint='Leave empty to show "Price on request".'><input {...bind('price')} type="number" min="0" step="1" /></FormField>
         <FormField id="availability" label="Availability label"><select {...bind('availability')}>{Object.entries(availabilityLabels).map(([v, l]) => <option key={v} value={v}>{l}</option>)}</select></FormField></div></fieldset>
       <fieldset><legend>Content</legend>
         <FormField id="specs" label="Key specifications" hint="One per line. Shown on product cards."><textarea rows="3" {...bind('specs')} /></FormField>
